@@ -1,5 +1,6 @@
 import React from 'react';
-import Button from '../common/Button';
+import LoginButton from '../common/LoginButton';
+import { useAuth0 } from '@auth0/auth0-react';
 
 function Landing() {
 
@@ -9,7 +10,7 @@ function Landing() {
       Welcome to the weather forecast web application. Please login with your Github user
       to use the application and view the weather in your city.
       </p>
-      <Button label="Login" />
+      <LoginButton label="Login" />
     </div>
   );
 }
