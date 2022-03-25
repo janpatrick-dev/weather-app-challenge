@@ -36,7 +36,7 @@ function Weather() {
   function formatDateToMMDDYYYY() {
     const date = new Date(weatherData.dt * 1000);
     const month = date.getMonth() + 1; // +1 because date.getMonth() is 0-indexed
-    const day = date.getDay();
+    const day = date.getDate();
     const year = date.getFullYear();
     return `${month < 10 ? '0' : ''}${month}/${day < 10 ? '0' : ''}${day}/${year}`; // add 0 at the beginning if month/day is less than 10
   }
