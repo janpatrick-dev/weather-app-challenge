@@ -1,4 +1,12 @@
 .landing {
   max-width: 800px;
   margin: 15rem auto;
+  padding: 5rem;
+
+  @include respond(tab-port) {
+    margin: 5rem auto;
+  }
+  @include respond(phone) {
+    margin: 5rem auto;
+  }
 }

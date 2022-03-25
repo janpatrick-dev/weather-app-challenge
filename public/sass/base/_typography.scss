@@ -41,9 +41,16 @@ body {
 }
 
 ////// WEATHER PAGE //////
-.weather__table--header-main,
+.weather__table--header-main {
+  font-weight: 600;
+}
+
 .weather__table--header-sub {
   font-weight: 600;
+
+  @include respond(phone) {
+    font-weight: 400;
+  }
 }
 
 
