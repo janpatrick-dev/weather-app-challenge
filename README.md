@@ -17,4 +17,8 @@ To compile the sass file, navigate to the root folder and run
 `axios`
 `react-spinners`
 
+# Important Note
+
+I intentionally added the '.env' file for exam purposes. It should be kept secured and hidden in a real-life situation.
+
 
