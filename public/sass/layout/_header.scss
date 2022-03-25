@@ -1,0 +1,11 @@
+.header {
+  padding: 2rem;
+  border-bottom: 1px solid #000;
+
+  display: flex;
+  align-items: center;
+
+  &__icon {
+    transform: scale(2);
+  }
+}

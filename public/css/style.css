@@ -1,0 +1,37 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+}
+
+.heading__primary {
+  font-size: 3rem;
+}
+
+.header {
+  padding: 2rem;
+  border-bottom: 1px solid #000;
+  display: flex;
+  align-items: center;
+}
+.header__icon {
+  transform: scale(2);
+}
+
+/*# sourceMappingURL=style.css.map */
