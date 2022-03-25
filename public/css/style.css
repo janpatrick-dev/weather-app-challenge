@@ -1,3 +1,10 @@
+:root {
+  --color-black: #000;
+  --color-light-grey-1: #ddd;
+  --color-light-grey-2: #f5f4f4;
+  --color-dark-grey-1: #d3d3d3;
+}
+
 *,
 *::before,
 *::after {
@@ -24,33 +31,181 @@ body {
   font-size: 3rem;
 }
 
+.header__nav--item {
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+
+.btn {
+  font-size: 1.2rem;
+}
+.btn:link, .btn:visited {
+  color: var(--color-black);
+  text-decoration: none;
+}
+
 .landing__welcome {
   font-size: 1.7rem;
   line-height: 1.3;
+}
+
+.home__profile--name {
+  font-size: 2rem;
+}
+
+.home__profile--github {
+  font-size: 1.5rem;
+}
+
+.weather__table--header-main,
+.weather__table--header-sub {
+  font-weight: 600;
+}
+
+.weather__table--cell {
+  font-size: 1.3rem;
 }
 
 .u-margin-bottom-small {
   margin-bottom: 2rem;
 }
 
+.u-margin-bottom-medium {
+  margin-bottom: 4rem;
+}
+
+.u-margin-bottom-large {
+  margin-bottom: 6rem;
+}
+
+.u-text-decoration-none {
+  text-decoration: none;
+}
+
+.u-text-transform-capitalize {
+  text-transform: capitalize;
+}
+
+.u-center-align {
+  text-align: center;
+}
+
 .btn {
+  border: none;
+  background-color: var(--color-dark-grey-1);
+  border: 1px solid var(--color-black);
+  border-radius: 3px;
   padding: 1rem 3rem;
+}
+.btn:hover {
+  background-color: var(--color-light-grey-1);
 }
 
 .header {
   position: relative;
   padding: 2rem;
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid var(--color-black);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header__logo {
   display: flex;
   align-items: center;
 }
 .header__icon {
   transform: scale(2);
 }
+.header__btn--logout {
+  height: 100%;
+  flex-grow: 0;
+}
+.header__nav {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+.header__nav--list {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+.header__nav--item {
+  display: inline-block;
+}
+
+.loading {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.home {
+  max-width: 800px;
+  margin: 5rem auto;
+  text-align: center;
+}
+.home__profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.home__profile--name, .home__profile--github {
+  display: inline-block;
+}
+.home__search {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.home__search--input {
+  margin-bottom: 1rem;
+}
+.home__search--input:focus {
+  outline: none;
+}
+.home__search--btn {
+  display: block;
+}
+.home__search--item {
+  width: 200px;
+  margin: 0 auto;
+  border: 1px solid var(--color-black);
+}
 
 .landing {
   max-width: 800px;
   margin: 15rem auto;
+}
+
+.weather {
+  margin: 0 auto;
+  padding: 10rem 0;
+  max-width: 800px;
+  position: relative;
+}
+.weather__table {
+  border: 1px solid var(--color-black);
+}
+.weather__table--header-main, .weather__table--header-sub, .weather__table--header-value {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+}
+.weather__table--header-main {
+  background-color: var(--color-dark-grey-1);
+}
+.weather__table--header-sub {
+  background-color: var(--color-light-grey-2);
+}
+.weather__table--cell {
+  border-right: 1px solid var(--color-black);
+  padding: 0.5rem;
+  margin: 0 -0.1rem -0.1rem 0.2rem;
+}
+.weather__btn--back {
+  position: absolute;
+  right: 0;
+  bottom: 0;
 }
 
 /*# sourceMappingURL=style.css.map */

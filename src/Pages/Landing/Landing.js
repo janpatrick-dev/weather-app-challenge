@@ -1,5 +1,5 @@
 import React from 'react';
-import LoginButton from '../common/LoginButton';
+import LoginButton from '../../Components/Buttons/LoginButton';
 import { useAuth0 } from '@auth0/auth0-react';
 
 function Landing() {

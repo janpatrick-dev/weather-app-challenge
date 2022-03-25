@@ -1,0 +1,42 @@
+.weather {
+  margin: 0 auto;
+  padding: 10rem 0;
+  max-width: 800px;
+  position: relative;
+  
+  &__table {
+    border: 1px solid var(--color-black);
+
+    &--header-main,
+    &--header-sub,
+    &--header-value {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+    }
+
+    &--header-main {
+      background-color: var(--color-dark-grey-1);
+    }
+
+    &--header-sub {
+      background-color: var(--color-light-grey-2);
+    }
+    
+    &--cell {
+      border-right: 1px solid var(--color-black);
+      padding: 0.5rem;
+      margin: 0 -.1rem -.1rem .2rem;
+    }
+  }
+
+  &__btn {
+
+    &--back {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+    }
+  }
+
+  
+}
