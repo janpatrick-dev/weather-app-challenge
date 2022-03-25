@@ -1,0 +1,35 @@
+:root {
+  --color-black: #000;
+
+  --color-light-grey-1: #ddd;
+  --color-light-grey-2: #f5f4f4;
+  
+  --color-dark-grey-1: #d3d3d3;
+ 
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%; // 10px
+
+  @include respond(big-desktop) {
+    font-size: 75%;
+  }
+  @include respond(tab-land) {
+    font-size: 56.25%;
+  }
+  @include respond(tab-port) {
+    font-size: 50%;
+  }
+}
+
+body {
+  box-sizing: border-box;
+}
