@@ -48,36 +48,53 @@ function Weather() {
   }
 
   return Object.keys(weatherData).length !== 0 ? (
-    <div className="weather">
-      <h2>{formatPlaceName()}</h2>
-      <div className="weather__table">
-        <div className="weather__table--header-main">
-          <div className="weather__table--cell">Date</div>
-          <div className="weather__table--cell">&nbsp;</div>
-          <div className="weather__table--cell">&nbsp;</div>
-          <div className="weather__table--cell">&nbsp;</div>
-          <div className="weather__table--cell">&nbsp;</div>
-          <div className="weather__table--cell">&nbsp;</div>
+    <>
+      <div className="weather">
+        <h2>{formatPlaceName()}</h2>
+        <div className="weather__table">
+          <div className="weather__table--header-main">
+            <div className="weather__table--cell">Date</div>
+            <div className="weather__table--cell">&nbsp;</div>
+            <div className="weather__table--cell">&nbsp;</div>
+            <div className="weather__table--cell">&nbsp;</div>
+            <div className="weather__table--cell">&nbsp;</div>
+            <div className="weather__table--cell">&nbsp;</div>
+          </div>
+          <div className="weather__table--header-sub">
+            <div className="weather__table--cell">(mm/dd/yyyy)</div>
+            <div className="weather__table--cell">Temp(F)</div>
+            <div className="weather__table--cell">Description</div>
+            <div className="weather__table--cell">Main</div>
+            <div className="weather__table--cell">Pressure</div>
+            <div className="weather__table--cell">Humidity</div>
+          </div>
+          <div className="weather__table--header-value">
+            <div className="weather__table--cell">{formatDateToMMDDYYYY()}</div>
+            <div className="weather__table--cell">{weatherData.main.temp}</div>
+            <div className="weather__table--cell u-text-transform-capitalize">{weatherData.weather[0].description}</div>
+            <div className="weather__table--cell">{weatherData.weather[0].main}</div>
+            <div className="weather__table--cell">{weatherData.main.pressure}</div>
+            <div className="weather__table--cell">{weatherData.main.humidity}</div>
+          </div>
         </div>
-        <div className="weather__table--header-sub">
-          <div className="weather__table--cell">(mm/dd/yyyy)</div>
-          <div className="weather__table--cell">Temp(F)</div>
-          <div className="weather__table--cell">Description</div>
-          <div className="weather__table--cell">Main</div>
-          <div className="weather__table--cell">Pressure</div>
-          <div className="weather__table--cell">Humidity</div>
-        </div>
-        <div className="weather__table--header-value">
-          <div className="weather__table--cell">{formatDateToMMDDYYYY()}</div>
-          <div className="weather__table--cell">{weatherData.main.temp}</div>
-          <div className="weather__table--cell u-text-transform-capitalize">{weatherData.weather[0].description}</div>
-          <div className="weather__table--cell">{weatherData.weather[0].main}</div>
-          <div className="weather__table--cell">{weatherData.main.pressure}</div>
-          <div className="weather__table--cell">{weatherData.main.humidity}</div>
-        </div>
+        <Link to="/home" className="weather__btn--back btn">Back</Link>
       </div>
-      <Link to="/home" className="weather__btn--back btn">Back</Link>
-    </div>
+      <div className="weather weather-mobile">
+        <h2>{formatPlaceName()}</h2>
+        <div className="weather__table">
+          <div className="weather__table--header-main">
+            <div className="weather__table--cell">Date (mm/dd/yyyy)</div>
+            <div className="weather__table--cell">Temp(F)</div>
+          </div>
+          <div className="weather__table--header-sub">
+            <div className="weather__table--cell">{formatDateToMMDDYYYY()}</div>
+            <div className="weather__table--cell">{weatherData.main.temp}</div>
+          </div>
+        </div>
+        <Link to="/home" className="weather__btn--back btn">Back</Link>
+      </div>
+    </> 
+      
   ) : loading ? <Loading loading={loading} size={150} /> : <div className="u-center-align">No data. :(</div>
 }
 

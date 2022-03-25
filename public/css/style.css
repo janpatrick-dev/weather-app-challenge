@@ -1,3 +1,17 @@
+/*
+  0 - 600px:        Phone
+  600px - 900px:    Tablet
+  900px - 1200px:   Tablet landscape
+  [1200px - 1800px] Where normal styles are applied
+  1800px+:          Big desktop
+*/
+/*
+  $breakpoint argument choices:
+  - phone
+  - tab-port
+  - tab-land
+  - big-desktop
+*/
 :root {
   --color-black: #000;
   --color-light-grey-1: #ddd;
@@ -15,6 +29,21 @@
 
 html {
   font-size: 62.5%;
+}
+@media only screen and (min-width: 112.5em) {
+  html {
+    font-size: 75%;
+  }
+}
+@media only screen and (max-width: 75em) {
+  html {
+    font-size: 56.25%;
+  }
+}
+@media only screen and (max-width: 56.25em) {
+  html {
+    font-size: 50%;
+  }
 }
 
 body {
@@ -57,9 +86,17 @@ body {
   font-size: 1.5rem;
 }
 
-.weather__table--header-main,
+.weather__table--header-main {
+  font-weight: 600;
+}
+
 .weather__table--header-sub {
   font-weight: 600;
+}
+@media only screen and (max-width: 37.5em) {
+  .weather__table--header-sub {
+    font-weight: 400;
+  }
 }
 
 .weather__table--cell {
@@ -130,6 +167,11 @@ body {
   gap: 2rem;
   list-style: none;
 }
+@media only screen and (max-width: 37.5em) {
+  .header__nav--list {
+    display: none;
+  }
+}
 .header__nav--item {
   display: inline-block;
 }
@@ -176,6 +218,17 @@ body {
 .landing {
   max-width: 800px;
   margin: 15rem auto;
+  padding: 5rem;
+}
+@media only screen and (max-width: 56.25em) {
+  .landing {
+    margin: 5rem auto;
+  }
+}
+@media only screen and (max-width: 37.5em) {
+  .landing {
+    margin: 5rem auto;
+  }
 }
 
 .weather {
@@ -184,12 +237,32 @@ body {
   max-width: 800px;
   position: relative;
 }
+@media only screen and (max-width: 37.5em) {
+  .weather {
+    padding: 2rem 0;
+    display: none;
+  }
+}
+.weather-mobile {
+  display: none;
+}
+@media only screen and (max-width: 37.5em) {
+  .weather-mobile {
+    max-width: 300px;
+    display: block;
+  }
+}
 .weather__table {
   border: 1px solid var(--color-black);
 }
 .weather__table--header-main, .weather__table--header-sub, .weather__table--header-value {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(6, minmax(100px, 1fr));
+}
+@media only screen and (max-width: 37.5em) {
+  .weather__table--header-main, .weather__table--header-sub, .weather__table--header-value {
+    grid-template-columns: repeat(2, minmax(100px, 1fr));
+  }
 }
 .weather__table--header-main {
   background-color: var(--color-dark-grey-1);
@@ -206,6 +279,11 @@ body {
   position: absolute;
   right: 0;
   bottom: 0;
+}
+@media only screen and (max-width: 37.5em) {
+  .weather__btn--back {
+    bottom: -30px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
